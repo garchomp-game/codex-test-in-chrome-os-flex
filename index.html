@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>シンプル掲示板</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="header">
+    <h1 class="header__title">シンプル掲示板</h1>
+    <p class="header__subtitle">投稿フォームに入力してメッセージを共有しましょう。</p>
+  </header>
+
+  <main class="container">
+    <section class="form-section">
+      <h2 class="section-title">新規投稿</h2>
+      <form id="post-form" class="post-form">
+        <div class="form-group">
+          <label for="author" class="form-label">お名前</label>
+          <input type="text" id="author" name="author" class="form-input" placeholder="匿名" maxlength="30">
+        </div>
+        <div class="form-group">
+          <label for="content" class="form-label">投稿内容 <span class="required">*</span></label>
+          <textarea id="content" name="content" class="form-textarea" placeholder="メッセージを入力してください" required maxlength="500"></textarea>
+        </div>
+        <button type="submit" class="submit-button">投稿する</button>
+      </form>
+    </section>
+
+    <section class="posts-section">
+      <h2 class="section-title">投稿一覧</h2>
+      <div id="posts" class="posts-list" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <template id="post-template">
+    <article class="post" data-id="">
+      <div class="post__header">
+        <span class="post__author"></span>
+        <time class="post__time" datetime=""></time>
+      </div>
+      <p class="post__content"></p>
+      <button type="button" class="post__delete-button" aria-label="投稿を削除">削除</button>
+    </article>
+  </template>
+
+  <script src="js/main.js"></script>
+</body>
+</html>
