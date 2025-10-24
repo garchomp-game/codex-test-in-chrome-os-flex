@@ -50,9 +50,9 @@
     const node = template.content.firstElementChild.cloneNode(true);
     node.dataset.id = post.id;
 
-    const authorEl = node.querySelector('.post__author');
-    const timeEl = node.querySelector('.post__time');
-    const contentEl = node.querySelector('.post__content');
+    const authorEl = node.querySelector('.font-bold');
+    const timeEl = node.querySelector('time');
+    const contentEl = node.querySelector('p');
 
     authorEl.textContent = post.author || '匿名';
     timeEl.textContent = formatDate(post.timestamp);
@@ -117,8 +117,8 @@
       return;
     }
 
-    if (target.classList.contains('post__delete-button')) {
-      const article = target.closest('.post');
+    if (target.closest('button')?.getAttribute('aria-label') === '投稿を削除') {
+      const article = target.closest('article');
       if (!article) {
         return;
       }

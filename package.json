@@ -1,0 +1,27 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "build": "tailwindcss -i css/tailwind.css -o css/style.css --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/garchomp-game/codex-test-in-chrome-os-flex.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/garchomp-game/codex-test-in-chrome-os-flex/issues"
+  },
+  "homepage": "https://github.com/garchomp-game/codex-test-in-chrome-os-flex#readme",
+  "devDependencies": {
+    "tailwindcss": "^3.0.0"
+  }
+}

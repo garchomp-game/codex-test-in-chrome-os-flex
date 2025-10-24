@@ -7,41 +7,41 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <header class="header">
-    <h1 class="header__title">シンプル掲示板</h1>
-    <p class="header__subtitle">投稿フォームに入力してメッセージを共有しましょう。</p>
+  <header class="bg-gradient-to-br from-blue-500 to-blue-400 text-white p-10 text-center shadow-lg">
+    <h1 class="text-4xl font-bold tracking-wide">シンプル掲示板</h1>
+    <p class="mt-2 text-sm opacity-80">投稿フォームに入力してメッセージを共有しましょう。</p>
   </header>
 
-  <main class="container">
-    <section class="form-section">
-      <h2 class="section-title">新規投稿</h2>
-      <form id="post-form" class="post-form">
-        <div class="form-group">
-          <label for="author" class="form-label">お名前</label>
-          <input type="text" id="author" name="author" class="form-input" placeholder="匿名" maxlength="30">
+  <main class="max-w-4xl mx-auto -mt-12 px-4 pb-12">
+    <section class="bg-white rounded-2xl p-8 shadow-lg mb-8">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">新規投稿</h2>
+      <form id="post-form" class="grid gap-6">
+        <div>
+          <label for="author" class="block text-sm font-medium text-gray-500 mb-1">お名前</label>
+          <input type="text" id="author" name="author" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-200 focus:border-blue-500 transition" placeholder="匿名" maxlength="30">
         </div>
-        <div class="form-group">
-          <label for="content" class="form-label">投稿内容 <span class="required">*</span></label>
-          <textarea id="content" name="content" class="form-textarea" placeholder="メッセージを入力してください" required maxlength="500"></textarea>
+        <div>
+          <label for="content" class="block text-sm font-medium text-gray-500 mb-1">投稿内容 <span class="text-red-500 text-xs">*</span></label>
+          <textarea id="content" name="content" class="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-4 focus:ring-blue-200 focus:border-blue-500 transition" placeholder="メッセージを入力してください" required maxlength="500"></textarea>
         </div>
-        <button type="submit" class="submit-button">投稿する</button>
+        <button type="submit" class="justify-self-end px-8 py-3 border-none rounded-full text-white font-bold bg-gradient-to-br from-blue-500 to-blue-600 hover:shadow-lg hover:-translate-y-0.5 transition-transform">投稿する</button>
       </form>
     </section>
 
-    <section class="posts-section">
-      <h2 class="section-title">投稿一覧</h2>
-      <div id="posts" class="posts-list" aria-live="polite"></div>
+    <section class="bg-white rounded-2xl p-8 shadow-lg">
+      <h2 class="text-2xl font-bold mb-4 text-gray-800">投稿一覧</h2>
+      <div id="posts" class="grid gap-6" aria-live="polite"></div>
     </section>
   </main>
 
   <template id="post-template">
-    <article class="post" data-id="">
-      <div class="post__header">
-        <span class="post__author"></span>
-        <time class="post__time" datetime=""></time>
+    <article class="border border-gray-200 rounded-2xl p-6 bg-white shadow-md relative" data-id="">
+      <div class="flex justify-between items-baseline mb-4">
+        <span class="font-bold text-gray-800"></span>
+        <time class="text-xs text-gray-400" datetime=""></time>
       </div>
-      <p class="post__content"></p>
-      <button type="button" class="post__delete-button" aria-label="投稿を削除">削除</button>
+      <p class="text-gray-600 whitespace-pre-wrap break-words"></p>
+      <button type="button" class="absolute top-4 right-4 text-gray-400 hover:text-red-500 font-bold transition-colors" aria-label="投稿を削除">削除</button>
     </article>
   </template>
 
